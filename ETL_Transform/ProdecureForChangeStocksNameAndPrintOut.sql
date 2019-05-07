@@ -1,4 +1,4 @@
-CREATE PROC Stp_buildnormalizedtable @table NVARCHAR(100) 
+ALTER PROC Stp_buildnormalizedtable @table NVARCHAR(100) 
 AS 
   BEGIN 
       DECLARE @cleanTable NVARCHAR(100), 
@@ -12,8 +12,7 @@ AS
                + '(Price,PriceDate) SELECT [Adj Close],[Date] FROM' 
                + @table + ' ORDER BY Date ASC' 
 
-      PRINT @s 
+      --PRINT @s 
+	  EXECUTE Stp_buildnormalizedtable @s
   END 
 
-EXEC Stp_buildnormalizedtable 
-  '[dbo].[AAPL_Stocks]' 
