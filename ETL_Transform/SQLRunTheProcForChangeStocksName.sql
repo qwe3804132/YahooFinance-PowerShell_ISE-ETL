@@ -13,9 +13,9 @@ select @m = MAX(ID) From @Loop
 While @b<=@m
 Begin
 
-SELECT @t = TableName from @LOOP Where ID = @b
+SELECT @t = TableName from @Loop Where ID = @b
 
-Execute [dbo].[stp_BuildNormalizedTable] @t
+Execute stp_BuildNormalizedTable @t
  
 set @b = @b+1
 end
