@@ -1,4 +1,7 @@
-﻿Function CountData ($file, $ch, $server, $db, $och = $null)
+﻿## 
+
+
+Function CountData ($file, $ch, $server, $db, $och = $null)
 {
     $ext = $file.Substring($file.LastIndexOf("."))
     $name = $file.Substring($file.LastIndexOf("\")+1).Replace($ext,"")
@@ -36,7 +39,8 @@
 }
  
 CountData -file "C:\files\file.txt" -ch "," -server "" -db ""
-
+##
+##SELECT CharCount , Count(LineNumber) from delfire GROUP BY CharCount
 
 ## M
 Function CountData_OneTable ($file, $ch, $server, $db, $name, $och = $null)
